@@ -1,25 +1,43 @@
 <!-- public/index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>2班の締め切りカウンター</title>
-</head>
-<body>
-  <h1>2班の締切カウンター</h1>
-  <ul id="list"></ul>
-  <script type="module">
-    import { daysUntil } from './deadline.js';
-    const deadlines = [
-      { name: '先端IT 振り返りシート', date: '2026-12-25' },
-      { name: '班の課題 発表', date: '2026-12-18' },
-    ];
-    const list = document.getElementById('list');
-    for (const d of deadlines) {
-      const li = document.createElement('li');
-      li.textContent = `${d.name}:あと ${daysUntil(d.date)} 日`;
-      list.appendChild(li);
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>2班の締め切りカウンター</title>
+    <style>
+      h1 {
+        display: inline-block;
+        background: linear-gradient(
+          90deg,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          violet
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2班の締切カウンター</h1>
+    <ul id="list"></ul>
+    <script type="module">
+      import { daysUntil } from "./deadline.js";
+      const deadlines = [
+        { name: "先端IT 振り返りシート", date: "2026-12-25" },
+        { name: "班の課題 発表", date: "2026-12-18" },
+      ];
+      const list = document.getElementById("list");
+      for (const d of deadlines) {
+        const li = document.createElement("li");
+        li.textContent = `${d.name}:あと ${daysUntil(d.date)} 日`;
+        list.appendChild(li);
+      }
+    </script>
+  </body>
 </html>
